@@ -1,0 +1,65 @@
+/* h1 {
+    color: green;
+}
+
+h2 {
+    color: beige;
+}
+
+h3 {
+    color: brown;
+} */
+
+/* #heading-1 {
+    color: aqua;
+}
+
+#heading-2 {
+    color: aquamarine;
+} */
+/* 
+h1 {
+    color: aqua;
+} */
+
+/* ID selector => # */
+
+/* #heading-1 {
+    color: aqua;
+}
+
+#heading-3 {
+    color: aqua;
+}
+
+#heading-2 {
+    color: blueviolet;
+}
+
+#heading-4 {
+    color: blueviolet;
+}
+
+#heading-5 {
+    color: green;
+}
+
+#heading-6 {
+    color: green;
+} */
+
+/* Class Selector -> . */
+
+.aiml {
+    color: aqua;
+}
+
+.sde {
+    color: blue;
+}
+
+.agentic {
+    color: brown;
+}
+
+/* CSS Selectors - Element, ID, Class */

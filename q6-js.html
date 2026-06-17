@@ -29,7 +29,22 @@
         // remove all button - Removes all the list items
         // Individual remove button - removes that task only
 
-        
+        const removeAllBtn = document.getElementById('removeAll')
+        const allBtns = document.querySelectorAll('.delete_button')
+
+        removeAllBtn.addEventListener('click', function() {
+            //Remove all the tasks
+            document.querySelector('ul').remove()
+            
+            //disable removeAllBtn
+            removeAllBtn.disabled = true
+        })
+
+        for(let i = 0; i < allBtns.length; i++) {
+            allBtns[i].addEventListener('click', function(e) {
+                e.target.parentElement.remove()
+            })
+        }
       </script>
 </body>
 </html>

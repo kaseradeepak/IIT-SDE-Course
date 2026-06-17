@@ -55,7 +55,19 @@
     <script>
         //Task - Write JS code to apply the CSS property (as per the data-color attribute) to each card on dblclick event
 
-        
+        //Add event listener to all the div
+        const allDivs = document.querySelectorAll(".card")
+
+        console.log(allDivs)
+
+        for(let i = 0; i < allDivs.length; i++) {
+          allDivs[i].addEventListener('dblclick', function(e) {
+            // console.log(e)
+            const color = e.target.getAttribute('data-color')
+
+            e.target.classList.add(color)
+          })
+        }
     </script>
 </body>
 </html>

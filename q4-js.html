@@ -109,7 +109,32 @@
 
     <!-- Task - Make the movie filter work -->
     <script>
+        const dropDown = document.querySelector('select')
 
+        // console.log(dropDown)
+        dropDown.addEventListener('change', function(e) {
+            const filterValue = dropDown.value
+            
+            //Compare the movie category with the filterValue selected by the user.
+            const allPrices = document.querySelectorAll('.price')
+
+            for(let i = 0; i < allPrices.length; i++) {
+                if(allPrices[i].getAttribute('data-category') == filterValue) {
+                    //Display this movie
+                    allPrices[i].parentElement.style.display = "block"
+                }  else {
+                    // Hide the movie
+                    allPrices[i].parentElement.style.display = "none"
+                }
+            }
+
+            console.log(filterValue)
+            if(filterValue == "none") {
+                for(let i = 0; i < allPrices.length; i++) {
+                    allPrices[i].parentElement.style.display = "block"
+                }
+            }
+        })
     </script>
 </body>
 </html>

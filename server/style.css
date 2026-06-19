@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Header */
+  .header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar {
+    max-width: 1180px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111827;
+  }
+  
+  .logo span,
+  .footer span {
+    color: #2563eb;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+  }
+  
+  .nav-links a {
+    font-weight: 600;
+    color: #475569;
+  }
+  
+  .nav-links a:hover {
+    color: #2563eb;
+  }
+  
+  .nav-btn,
+  .primary-btn,
+  .secondary-btn,
+  .card-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.3s ease;
+  }
+  
+  .nav-btn,
+  .primary-btn,
+  .card-btn {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  
+  .nav-btn:hover,
+  .primary-btn:hover,
+  .card-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+  }
+  
+  .secondary-btn {
+    background: #e0ecff;
+    color: #1d4ed8;
+  }
+  
+  .secondary-btn:hover {
+    background: #c7ddff;
+  }
+  
+  /* Hero */
+  .hero {
+    max-width: 1180px;
+    margin: auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  
+  .hero h1 {
+    font-size: 54px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+  }
+  
+  .hero-text {
+    font-size: 18px;
+    color: #475569;
+    max-width: 620px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 44px;
+  }
+  
+  .stats h3 {
+    font-size: 28px;
+    color: #2563eb;
+  }
+  
+  .stats p {
+    color: #64748b;
+    font-weight: 600;
+  }
+  
+  .hero-card {
+    background: linear-gradient(135deg, #2563eb, #0f172a);
+    padding: 24px;
+    border-radius: 28px;
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.22);
+  }
+  
+  .course-preview {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 30px;
+  }
+  
+  .course-preview .tag {
+    color: #2563eb;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  
+  .course-preview h2 {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  
+  .course-preview p {
+    color: #475569;
+    margin-bottom: 18px;
+  }
+  
+  .course-preview ul {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  
+  .course-preview li {
+    margin-bottom: 10px;
+    color: #334155;
+  }
+  
+  /* Sections */
+  .section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 80px 24px;
+  }
+  
+  .section-heading {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+  
+  .section-heading h2 {
+    font-size: 38px;
+    letter-spacing: -0.8px;
+    margin-bottom: 14px;
+  }
+  
+  .section-heading p {
+    color: #64748b;
+  }
+  
+  .course-grid,
+  .features-grid,
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  .course-card,
+  .feature-box,
+  .testimonial-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    padding: 28px;
+    border-radius: 22px;
+    transition: 0.3s ease;
+  }
+  
+  .course-card:hover,
+  .feature-box:hover,
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  }
+  
+  .course-card.featured {
+    border: 2px solid #2563eb;
+  }
+  
+  .course-icon {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+  
+  .course-card h3,
+  .feature-box h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  
+  .course-card p,
+  .feature-box p,
+  .testimonial-card p {
+    color: #64748b;
+    margin-bottom: 20px;
+  }
+  
+  .course-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .course-meta span {
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 10px;
+    border-radius: 999px;
+  }
+  
+  .course-card a {
+    color: #2563eb;
+    font-weight: 800;
+  }
+  
+  .why-section {
+    background: #eff6ff;
+    max-width: 100%;
+  }
+  
+  .why-section .features-grid,
+  .why-section .section-heading {
+    max-width: 1180px;
+  }
+  
+  .features-grid {
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  /* Instructor */
+  .instructor-section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .instructor-content h2 {
+    font-size: 38px;
+    margin-bottom: 16px;
+  }
+  
+  .instructor-content p {
+    color: #64748b;
+    margin-bottom: 26px;
+    max-width: 650px;
+  }
+  
+  .instructor-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e5e7eb;
+    padding: 36px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  }
+  
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+  }
+  
+  .instructor-card h3 {
+    font-size: 24px;
+  }
+  
+  .instructor-card p {
+    color: #64748b;
+  }
+  
+  /* Testimonials */
+  .testimonial-card h4 {
+    color: #0f172a;
+  }
+  
+  /* CTA */
+  .cta {
+    margin: 50px auto 80px;
+    max-width: 1100px;
+    padding: 64px 24px;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+    color: #ffffff;
+    border-radius: 30px;
+    text-align: center;
+  }
+  
+  .cta h2 {
+    font-size: 40px;
+    margin-bottom: 14px;
+  }
+  
+  .cta p {
+    color: #dbeafe;
+    margin-bottom: 28px;
+  }
+  
+  .cta .primary-btn {
+    background: #ffffff;
+    color: #1d4ed8;
+  }
+  
+  .cta .primary-btn:hover {
+    background: #e0ecff;
+  }
+  
+  /* Footer */
+  .footer {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 34px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer h3 {
+    font-size: 24px;
+  }
+  
+  .footer p {
+    color: #cbd5e1;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 22px;
+  }
+  
+  .footer-links a {
+    color: #cbd5e1;
+  }
+  
+  .footer-links a:hover {
+    color: #ffffff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .nav-links,
+    .nav-btn {
+      display: none;
+    }
+  
+    .hero,
+    .instructor-section {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero h1 {
+      font-size: 40px;
+    }
+  
+    .course-grid,
+    .testimonial-grid,
+    .features-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .footer {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .hero {
+      padding-top: 48px;
+    }
+  
+    .hero h1,
+    .section-heading h2,
+    .instructor-content h2,
+    .cta h2 {
+      font-size: 32px;
+    }
+  
+    .course-grid,
+    .testimonial-grid,
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .stats {
+      flex-direction: column;
+      gap: 18px;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+    }
+  
+    .primary-btn,
+    .secondary-btn {
+      text-align: center;
+    }
+  }

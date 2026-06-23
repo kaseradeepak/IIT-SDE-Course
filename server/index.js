@@ -2,14 +2,17 @@
 // npm init
 const http = require('http')
 const fs = require('fs')
+const urlPackage = require('url')
 
 //Create a Server
 const myServer = http.createServer((req, res) => {
       //Implement APIs
-     // console.log(req)
-    switch(req.url) {
+     console.log(req.url)
+    const parsedUrl = urlPackage.parse(req.url, true)
+    console.log(parsedUrl)
+    switch(parsedUrl.pathname) {
         case "/":
-            fs.readFile('index1.html', "utf8", (htmlErr, htmlData) => {
+            fs.readFile('index.html', "utf8", (htmlErr, htmlData) => {
                 if (htmlErr) {
                   res.writeHead(500, { "Content-Type": "text/plain" });
                   res.end("Error reading HTML file");
@@ -37,7 +40,16 @@ const myServer = http.createServer((req, res) => {
             res.end('This is the about page')
             break
         case "/courses":
-            res.end('This is the courses page')
+            let courseName = parsedUrl.query.name
+            console.log(courseName)
+            
+            if(courseName === 'java') {
+              res.end('This is Java Course Page')
+            } else if(courseName == 'ai') {
+              res.end('This is AI Course Page')
+            } else {
+              res.end('Course not found.')
+            }
             break
         default:
             res.end('Page Not found.')
@@ -49,3 +61,8 @@ const myServer = http.createServer((req, res) => {
 myServer.listen(8000, () => {
     console.log('Server Started!')
 })
+
+// /courses?name=java => Return Java Course Page
+// /courses?name=ai => Return AI Course Page
+
+// Express JS

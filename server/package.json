@@ -5,8 +5,13 @@
   "license": "ISC",
   "author": "Deepak Kasera",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
   }
 }

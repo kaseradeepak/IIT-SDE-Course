@@ -45,3 +45,4 @@ app.get('/courses/:id', (req, res) => {
 
     res.status(200).send(course)
 })
+

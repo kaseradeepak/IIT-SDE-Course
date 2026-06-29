@@ -40,4 +40,31 @@ async function createCourse() {
     console.log('Course saved successfuly in the database.')
 }
 
-createCourse()
+// createCourse()
+async function updateCourse(id) {
+    let course = await courseModel.findById(id)
+
+    if (!course) {
+        console.log("Course not found, please provide a valid id.")
+        return
+    }
+
+    course.title = "Java, SpringBoot & Microservices"
+    await course.save()
+    console.log('Course updated successfuly.')
+}
+
+// updateCourse('6a426795cb150df39e0d2f7a')
+
+async function  deleteCourse(id) {
+    let course = await courseModel.findByIdAndDelete(id)
+
+    if (!course) {
+        console.log("Course not found, please provide a valid id.")
+        return
+    }
+    
+    console.log('Course deleted successfuly.')
+}
+
+deleteCourse('6a4268084d2f8a2c4af5f548')
